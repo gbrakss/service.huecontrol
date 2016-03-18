@@ -266,7 +266,7 @@ class Bridge:
 
         return reply; # json.dumps(reply)  # return the string so the receiver can easily store it (relevant for saving settings in Kodi which must be strings)
         
-    def setFullStateLights(self, state, lightList=None, briOnly=False):
+    def setFullStateLights(self, state, lightList=None, briOnly=False, transition=0):
     
         # Set the lights back to the given full state of the bridge
         if isinstance(state, basestring):
@@ -294,6 +294,7 @@ class Bridge:
                     lampstate = {}
 
                     lampstate['on'] = storedstate['on']
+                    lampstate['transitiontime'] = transition
                     
                     # When lamp going to be off don't send the rest
                     # It avoids weird color flash

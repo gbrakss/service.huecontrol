@@ -43,7 +43,9 @@ msgctxt "#30004"
 msgid "Hue settings"
 msgstr ""
 
-#empty string with id 30005
+msgctxt "#30005"
+msgid "Transition time"
+msgstr ""
 
 msgctxt "#30006"
 msgid "Connect to Hue bridge"

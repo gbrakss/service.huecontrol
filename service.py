@@ -40,8 +40,9 @@ class HuePlayer(xbmc.Player):
         hueAddonSettings = xbmccommon.HueControlSettings()
         bridge = hue.Bridge(ip=hueAddonSettings.data["bridgeip"], id=hueAddonSettings.data["bridgeid"], username=hueAddonSettings.data.get("bridgeusername", None))
 
+        transition = int(__addon__.getSetting("transitiontime")) * 10
         lamps = xbmccommon.getConfiguredLampsList()
-        bridge.setFullStateLights(state, lamps, briOnly)
+        bridge.setFullStateLights(state, lamps, briOnly, transition)
 
     def onPlayBackStarted(self):
         __addon__ = xbmcaddon.Addon(id=self.addonId)

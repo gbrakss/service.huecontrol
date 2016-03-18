@@ -21,7 +21,7 @@ def recallScene(sceneName):
     logDebug("recall preset" + sceneName + ": " + str(state))
 
     bridge = hue.Bridge(ip=hueAddonSettings.data["bridgeip"], id=hueAddonSettings.data["bridgeid"],username=hueAddonSettings.data.get("bridgeusername", None))
-    bridge.setFullStateLights(state,  xbmccommon.getConfiguredLampsList(), briOnly)
+    bridge.setFullStateLights(state,  xbmccommon.getConfiguredLampsList(), briOnly, 0)
 
 
 addonId = sys.argv[0]  # e.g.   service.huecontrol
